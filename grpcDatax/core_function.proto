@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message Data {
-    string text = 1;
-}
-
-service DockerCommandCall {
-    rpc CommandCall(Data) returns (Data) {}
-}

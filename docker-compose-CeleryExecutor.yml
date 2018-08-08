@@ -16,7 +16,7 @@ services:
         #     - ./pgdata:/var/lib/postgresql/data/pgdata
 
     webserver:
-        image: yqj/docker-airflow
+        image: cloudin/docker-airflow
         restart: always
         depends_on:
             - postgres
@@ -31,7 +31,8 @@ services:
             # - REDIS_PASSWORD=redispass
         volumes:
             - ./dags:/usr/local/airflow/dags
-            - ./grpcDatax:/usr/local/airflow/grpcDatax
+            - ./grpcHandle:/usr/local/airflow/grpcHandle
+            - ./datax_script:/usr/local/airflow/datax_script
             # Uncomment to include custom plugins
             # - ./plugins:/usr/local/airflow/plugins
         ports:
@@ -44,7 +45,7 @@ services:
             retries: 3
 
     flower:
-        image: yqj/docker-airflow
+        image: cloudin/docker-airflow
         restart: always
         depends_on:
             - redis
@@ -56,14 +57,15 @@ services:
         command: flower
 
     scheduler:
-        image: yqj/docker-airflow
+        image: cloudin/docker-airflow
         restart: always
         depends_on:
             - webserver
         # network_mode: host
         volumes:
             - ./dags:/usr/local/airflow/dags
-            - ./grpcDatax:/usr/local/airflow/grpcDatax
+            - ./grpcHandle:/usr/local/airflow/grpcHandle
+            - ./datax_script:/usr/local/airflow/datax_script
             # Uncomment to include custom plugins
             # - ./plugins:/usr/local/airflow/plugins
         environment:
@@ -77,14 +79,15 @@ services:
         command: scheduler
 
     worker:
-        image: yqj/docker-airflow
+        image: cloudin/docker-airflow
         restart: always
         depends_on:
             - scheduler
         # network_mode: host
         volumes:
             - ./dags:/usr/local/airflow/dags
-            - ./grpcDatax:/usr/local/airflow/grpcDatax
+            - ./grpcHandle:/usr/local/airflow/grpcHandle
+            - ./datax_script:/usr/local/airflow/datax_script
             # Uncomment to include custom plugins
             # - ./plugins:/usr/local/airflow/plugins
         environment:

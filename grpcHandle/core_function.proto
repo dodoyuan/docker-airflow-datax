@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+message FileInfo {
+    string filedir = 1;
+    string filename = 2;
+}
+
+message Result {
+    string res = 1;
+}
+
+message MysqlInfo {
+    string database = 1;
+    string user = 2;
+    string password = 3;
+    string host = 4;
+    int32 port = 5;
+    int32 days = 6;
+}
+
+message Nonetype {
+
+}
+
+service DataxCommandCall {
+    rpc datax_command_call(FileInfo) returns (Result) {}
+}
+
+service MysqlDumpCommandCall {
+    rpc mysqldump_command_call(MysqlInfo) returns (Result)   {}
+}
+
+service PiecesDefectsProcess {
+    rpc pieces_defects_ftp_downloader(Nonetype)  returns (Result)  {}
+    rpc pieces_defects_main_process(Nonetype)  returns (Result)  {}
+}
+

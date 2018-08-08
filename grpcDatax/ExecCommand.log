@@ -1,6 +1,0 @@
-sudo docker run --rm -it --net host -v /home/jump-openstack/workplace/docker-airflow/datax_script:/conf cloudin/datax:2.0 /opt/datax/bin/datax.py /conf/abc_test.json
-sudo docker run --rm -it --net host -v /home/jump-openstack/workplace/docker-airflow/datax_script:/conf cloudin/datax:2.0 /opt/datax/bin/datax.py /conf/abc_test.json
-sudo docker run --rm -it --net host -v /home/jump-openstack/workplace/docker-airflow/datax_script:/conf cloudin/datax:2.0 /opt/datax/bin/datax.py /conf/abc_test.json
-sudo docker run --rm -it --net host -v /home/jump-openstack/workplace/docker-airflow/datax_script:/conf cloudin/datax:2.0 /opt/datax/bin/datax.py /conf/abc_test.json
-sudo docker run -it --net host -v /home/jump-openstack/workplace/docker-airflow/datax_script:/conf cloudin/datax:2.0 /opt/datax/bin/datax.py /conf/abc_test.json
-sudo docker run -it --net host -v /home/jump-openstack/workplace/docker-airflow/datax_script:/conf cloudin/datax:2.0 /opt/datax/bin/datax.py /conf/abc_test.json
